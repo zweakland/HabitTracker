@@ -1,0 +1,132 @@
+<div class="container-fluid" style="background-color: white;">
+    <div class="row justify-content-start">
+        <div class="col-3 mr-auto mt-3">
+            <h1>{{appName}}</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-auto">
+            <app-month-select></app-month-select>
+        </div>
+
+        <!-- click 3 times to change color black,red,green,clear -->
+
+        <div class="col-12 my-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive-xl">
+                        <table class="table-bordered" id="gridTable">
+                            <thead>
+                                <tr class="tableStyle">
+                                    <th class="tableStyle" scope="col">Habit</th>
+                                    <th class="tableStyle" scope="col">1</th>
+                                    <th class="tableStyle" scope="col">2</th>
+                                    <th class="tableStyle" scope="col">3</th>
+                                    <th class="tableStyle" scope="col">4</th>
+                                    <th class="tableStyle" scope="col">5</th>
+                                    <th class="tableStyle" scope="col">6</th>
+                                    <th class="tableStyle" scope="col">7</th>
+                                    <th class="tableStyle" scope="col">8</th>
+                                    <th class="tableStyle" scope="col">9</th>
+                                    <th class="tableStyle" scope="col">10</th>
+                                    <th class="tableStyle" scope="col">11</th>
+                                    <th class="tableStyle" scope="col">12</th>
+                                    <th class="tableStyle" scope="col">13</th>
+                                    <th class="tableStyle" scope="col">14</th>
+                                    <th class="tableStyle" scope="col">15</th>
+                                    <th class="tableStyle" scope="col">16</th>
+                                    <th class="tableStyle" scope="col">17</th>
+                                    <th class="tableStyle" scope="col">18</th>
+                                    <th class="tableStyle" scope="col">19</th>
+                                    <th class="tableStyle" scope="col">20</th>
+                                    <th class="tableStyle" scope="col">21</th>
+                                    <th class="tableStyle" scope="col">22</th>
+                                    <th class="tableStyle" scope="col">23</th>
+                                    <th class="tableStyle" scope="col">24</th>
+                                    <th class="tableStyle" scope="col">25</th>
+                                    <th class="tableStyle" scope="col">26</th>
+                                    <th class="tableStyle" scope="col">27</th>
+                                    <th class="tableStyle" scope="col">28</th>
+                                    <th class="tableStyle" scope="col">29</th>
+                                    <th class="tableStyle" scope="col">30</th>
+                                    <th class="tableStyle" scope="col">31</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of habits">
+                                    <td class="tableStyle">{{e.title}}</td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle"></td>
+                                    <td class="tableStyle" (click)="deleteRow(e.id)"><button class="btn btn-outline-danger">-</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 ml-2">
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                data-target="#addHabit">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <app-add-habit></app-add-habit> -->
+
+        <div class="modal fade" id="addHabit" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">{{modalName}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control" type="text" [(ngModel)]="testTitle" placeholder="Habit Name">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" (click)="addTest()" class="btn btn-primary"
+                            data-dismiss="modal">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 text-center mb-3">
+            <button type="button" (click)="printPage()" class="btn btn-secondary">Print</button>
+        </div>
+
+    </div>
+</div>
